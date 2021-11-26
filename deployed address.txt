@@ -1,0 +1,2 @@
+Deployed to local ganache server: 
+0x5F4CB8735f226f6b0770c4926270D14D3DF1c788

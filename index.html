@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="shortcut icon" href="#">
+    <title>Token Mint Space</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js" defer></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+            <div class="text-right">
+                <button type="button" class="btn btn-outline-light me-2" id="mm-detected">No MetaMask 🥺</button>
+                <button type="button" class="btn btn-warning" id="mm-connect">Connect to MetaMask</button>
+                <div id="mm-current-account"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+
+    <div class="px-4 py-5 my-5 text-center">
+        <h1>Token Mint Space</h1>
+        <button type="button" class="btn btn-sm btn-primary btn-outline-dark" id="query-minter-role">Can I
+            mint?</button>
+        <br>
+        <label for="query-minter-role" id="is-minter">Check if you are able to mint</label>
+
+    </div>
+    <div class="px-4 py-5 my-5 text-center">
+        <label for="become-minter">If not, become a minter!</label>
+        <button id="become-minter" class="btn btn-sm btn-primary" type="button">Become a Minter</button>
+        <small class="text-muted">You will pay a one-time fee of 0.01 eth.</small>
+    </div>
+    <!-- <hr class="px-4 py-5 my-5"> -->
+    <!-- <small>Now, upload your image file and Mint it!</small> -->
+    <div class="px-4 py-5 my-5 text-center">
+        <label for="fimage" class="form-label">Select an image to upload</label>
+        <br>
+        <input id="fimage" type="file" name="myNFT" accept="image/*">
+    </div>
+    <div class="px-4 py-5 my-5 text-center">
+        <div id="store-progress"></div>
+        <button id="storeButton" class="btn btn-sm btn-primary" type="submit">Mint this Image</button>
+    </div>
+    <br></br>
+    <div id="store-progress"></div>
+
+
+
+
+    <!-- Opensea Preview Footer -->
+    <div class="bg-dark text-secondary px-4 py-5 text-center">
+        <div class="py-5">
+            <h1 class="display-5 fw-bold text-white">See your NFT on OpenSea</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="fs-5 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the
+                    world’s
+                    most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid
+                    system,
+                    extensive prebuilt components, and powerful JavaScript plugins.</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">OpenSea
+                        (testnet)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- scripts load -->
+
+    <script type="module" src="dapp.js"></script>
+
+</html>
