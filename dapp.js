@@ -1,4 +1,4 @@
-const rctAddress = '0x4d23Af4254eb0fFAb000f2Ec634Eff8C839536EC';
+const rctAddress = '0xCDC0d4b018cA34F615fde38Ad0EBc4A2fF738536';
 const rctABI = [
   {
     inputs: [
@@ -177,7 +177,7 @@ storeButton.onclick = async () => {
           'Using the nft.storage metadata API to create ERC-1155 compatible metadata.',
         image: imageFile,
       });
-      console.log('124' + 'URI' + metadata.url);
+      console.log(metadata.url);
       progressMsg.innerHTML = 'Minting Image... ';
       await mint(metadata.url);
       progressMsg.innerHTML = 'Complete! ';
