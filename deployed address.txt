@@ -1,2 +1,2 @@
-Deployed to local ganache server: 
-0x5F4CB8735f226f6b0770c4926270D14D3DF1c788
+Ropsten:
+0xCDC0d4b018cA34F615fde38Ad0EBc4A2fF738536

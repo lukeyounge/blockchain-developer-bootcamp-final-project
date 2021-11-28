@@ -23,14 +23,12 @@ contract RecogToken is ERC721, ERC721URIStorage {
 
     /// @notice a simple getter function to query an account's role
     /// @param _account the account to query
-    /// @return true if the account is a minter, false otherwise
     function getMinterRole(address _account) public view returns (bool) {
         return minterRole[_account];
     }
 
     /// @notice function to add a new minter, with paying 0.001 ether
     /// @param _minter the account to add as a minter
-    /// @return true if the account was added as a minter, false otherwise
     function addMinter(address _minter) public payable {
         require(msg.value >= 1000000000000000, "pay at least 0.001 eth to sign up as a minter");
         require(_minter != address(0));
@@ -57,7 +55,7 @@ contract RecogToken is ERC721, ERC721URIStorage {
         // minterRole[owner] = true;
     
     /// @dev this function creates the tokenId and mints the token to the msg.sender
-    /// @param _uri the URI of the token
+    /// @param uri the URI of the token
     /// @param to the address to mint the token to
     function safeMint(address to, string memory uri) public {
         require( minterRole[to], "Only minter can mint tokens" );
