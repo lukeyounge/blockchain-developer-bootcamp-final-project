@@ -3,10 +3,10 @@
 ## Blockchain developer bootcamp final project - Luke Younge
 
 #### Deployed url
-https://lukeyounge.github.io/tokenmint-ipfs/
+https://lukeyounge.github.io/blockchain-developer-bootcamp-final-project/
 
 #### Screencast
-...
+https://youtu.be/A1SKzwG11ug
 
 #### public account
 lukey.eth
@@ -43,7 +43,7 @@ root
 - deployed_address.txt
 - design_pattern_decisions.md 
 
-To run the front end, simply use 'go live' in vs code after you have cloned and installed dependencies.
+To run the front end, simply use 'go live' in vs code on index.html after you have cloned and installed dependencies.
 
 ## Cloning and installing on your machine
 
@@ -55,11 +55,7 @@ To run the front end, simply use 'go live' in vs code after you have cloned and 
 4. comment out ropsten and rinkeby sections in truffle-config.js
 
 #### Testing
-If you don't already have ganache installed:
-1. run `npm install ganache-cli -g` and if you don't have truffle installed:
-2. run `npm install --save-dev truffle`.
-
-Then:
+Install truffle if you don't already have it, then:
 1. run `truffle develop` 
 2. run `compile` (All contracts will compile)
 3. run `test` (all 6 tests will pass)
