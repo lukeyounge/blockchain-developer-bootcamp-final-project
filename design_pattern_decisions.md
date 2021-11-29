@@ -11,15 +11,21 @@ In the final project requirements, available in the course here, there is a requ
 
 - Inter-Contract Execution (Calling functions in external contracts) Inter-Contract Execution, Part 1 and Part 2
 - Inheritance and Interfaces (Importing and extending contracts and/or using contract interfaces) Inheritances and Interfaces — (note: this is already a requirement in the final project, so you can simply describe which library or interface you use)
-I'm using Open Zepp contracts 721 and ...
+  
+  *I'm using Open Zeppelin contracts ERC721 and ERC721URIStorage, I'm also using their Counters utility. *
+
 - Oracles (retrieving third-party data) Off-Chain Oracles and Chapter 5: Second-Order Effects — Oracles Revisited
+  
 - Access Control Design Patterns (Restricting access to certain functions using things like Ownable, Role-based Control) Access Control Design Patterns
-I'm using access control for the minter function
+  
+*I'm using access control for the minter function. In a production version I would implement Open Zeppelin's Role-based access control, but for this project I made a simple mapping to store user's accounts as a bool of 'minterRole'. I then require this bool to be true before calling the _safeMint function.*
+
 - Upgradable Contracts (Ways to update a deployed contract’s logic or data) Upgradable Contracts and Additional Material: Upgradable Contracts
 - Optimizing Gas (Creating more efficient Solidity code) Optimizing Gas
-I'm optimising gas by: 
+  
+*I'm optimising gas by: 
 -- not inheriting the enumerable contract and rather using counters
--- not storing data on chain
+-- not storing data on chain, but rather on IPFS*
 
 ## Below is a list of attack vectors and / or security measures from the course, specifically Solidity Pitfalls and Attacks and Smart Contract Pitfalls and Attacks. It is okay for some of these to overlap with design patterns, but you can list at least two of them in avoiding_common_attacks.md:
 

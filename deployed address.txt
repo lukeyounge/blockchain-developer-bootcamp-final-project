@@ -1,5 +1,6 @@
 Ropsten:
 0xCDC0d4b018cA34F615fde38Ad0EBc4A2fF738536
+Not using this one because OpenSea doesn't support.
 
 Rinkeby:
 0x87DD842a4386e4514529f60Aacac127aba699A6f
