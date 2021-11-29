@@ -14,7 +14,6 @@ contract RecogToken is ERC721, ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIdCounter;
 
-    /// Sets the msg.sender as the owner
     address owner = msg.sender;
 
     /// @dev this role is used to grant access to the mint function
@@ -47,7 +46,7 @@ contract RecogToken is ERC721, ERC721URIStorage {
     /// @notice this is inherited from OpenZeppelin ERC721
 
     function _baseURI() internal pure override returns (string memory) {
-        return "https://ipfs.io/ipfs/";
+        return "";
     }
 
     /// @dev constructor for the RecogToken contract

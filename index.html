@@ -18,6 +18,7 @@
 </head>
 
 <body>
+
     <!-- Header -->
     <header class="p-3 bg-dark text-white">
         <div class="container">
@@ -28,57 +29,82 @@
             </div>
         </div>
     </header>
-
-    <!-- Main -->
-
-    <div class="px-4 py-5 my-5 text-center">
-        <h1>Token Mint Space</h1>
-        <button type="button" class="btn btn-sm btn-primary btn-outline-dark" id="query-minter-role">Can I
-            mint?</button>
-        <br>
-        <label for="query-minter-role" id="is-minter">Check if you are able to mint</label>
-
-    </div>
-    <div class="px-4 py-5 my-5 text-center">
-        <label for="become-minter">If not, become a minter!</label>
-        <button id="become-minter" class="btn btn-sm btn-primary" type="button">Become a Minter</button>
-        <small class="text-muted">You will pay a one-time fee of 0.01 eth.</small>
-    </div>
-    <!-- <hr class="px-4 py-5 my-5"> -->
-    <!-- <small>Now, upload your image file and Mint it!</small> -->
-    <div class="px-4 py-5 my-5 text-center">
-        <label for="fimage" class="form-label">Select an image to upload</label>
-        <br>
-        <input id="fimage" type="file" name="myNFT" accept="image/*">
-    </div>
-    <div class="px-4 py-5 my-5 text-center">
-        <div id="store-progress"></div>
-        <button id="storeButton" class="btn btn-sm btn-primary" type="submit">Mint this Image</button>
-    </div>
-    <br></br>
-    <div id="store-progress"></div>
+    <div class="col-lg-8 mx-auto p-3 py-md-5">
 
 
+        <main>
+            <h1>Welcome to your DIY token minting app</h1>
+            <p class="fs-5 col-md-8">Quickly and easily get started with minting your own NFTs, just connect to
+                MetaMask, select Rinkeby, then click to button to check if you are a registered minter. If not, then
+                sign up by clicking on the 'become a minter' button.</p>
+            <div class="mb-5">
 
+                <button type="button" class="btn btn-primary btn-lg px-4 btn-info" id="query-minter-role">Can I
+                    mint?</button>
+                <br>
+                <label for="query-minter-role" id="is-minter">Check if you are able to mint</label>
+            </div>
 
-    <!-- Opensea Preview Footer -->
-    <div class="bg-dark text-secondary px-4 py-5 text-center">
-        <div class="py-5">
-            <h1 class="display-5 fw-bold text-white">Coming Soon... See your NFT!</h1>
-            <div class="col-lg-6 mx-auto">
-                <p class="fs-5 mb-4">I know, this sucks, but I haven't yet worked out how to actually disply the token
-                    image! It's just metadata for now.</p>
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">OpenSea
-                        (testnet)</button>
+            <hr class="col-3 col-md-6 mb-5">
+
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <h3>Sign Up</h3>
+                    <label for="become-minter">If not, become a minter!</label>
+                    <br>
+                    <button id="become-minter" class="btn btn-primary btn-lg px-4" type="button">Become a
+                        Minter</button>
+                    <br>
+                    <small class="text-muted">You will pay a one-time fee of 0.01 eth.</small>
+                    <p>Please wait a couple of minutes for your minting role to be confirmed on the blockchain.
+                        Then click on the 'Can I mint?' button above again to check if you are a minter.</p>
+                    </p>
+
                 </div>
+
+                <div class="col-md-6">
+
+
+                    <h3>Now, mint your NFT</h3>
+                    <label for="fimage" class="form-label">Select an image to upload</label>
+                    <br>
+                    <input id="fimage" type="file" name="myNFT" accept="image/*">
+                    <br>
+                    <div id="store-progress"></div>
+                    <br>
+                    <button id="storeButton" class="btn btn-primary btn-lg px-4" type="submit">Mint this Image</button>
+                    <p>It can take several minutes for the NFT to be confirmed on the blockchain.</p>
+
+                </div>
+            </div>
+        </main>
+        <footer class="pt-5 my-5 text-muted border-top">
+
+        </footer>
+    </div>
+
+
+</body>
+
+<!-- Opensea Preview Footer -->
+<div class="bg-dark text-secondary px-4 py-5 text-center">
+    <div class="py-5">
+        <h1 class="display-5 fw-bold text-white">See your NFT on OpenSea</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="fs-5 mb-4">Click here to go to the collection on Opensea.
+                Please note it can take a while for the image preview to show up there, but it will!</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="https://testnets.opensea.io/collection/recogtoken-ge00lgnn9h" type="button"
+                    class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">OpenSea
+                    (testnet)</button>
             </div>
         </div>
     </div>
+</div>
 
 
-    <!-- scripts load -->
+<!-- scripts load -->
 
-    <script type="module" src="dapp.js"></script>
+<script type="module" src="dapp.js"></script>
 
 </html>

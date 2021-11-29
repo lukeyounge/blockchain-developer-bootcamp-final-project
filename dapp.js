@@ -1,4 +1,4 @@
-const rctAddress = '0xCDC0d4b018cA34F615fde38Ad0EBc4A2fF738536';
+const rctAddress = '0x87DD842a4386e4514529f60Aacac127aba699A6f';
 const rctABI = [
   {
     inputs: [
@@ -99,8 +99,7 @@ window.addEventListener('load', function () {
     let mmDetected = this.document.getElementById('mm-detected');
     mmDetected.innerHTML = 'MetaMask detected';
   } else {
-    // mmDetected.innerHTML = 'No MetaMask 🥺';
-
+    mmDetected.innerHTML = 'No MetaMask 🥺';
     console.log('No web3? You should consider trying MetaMask!');
     this.alert('Please install MetaMask or other wallet to use this dapp');
     window.web3 = new Web3(
@@ -165,8 +164,10 @@ storeButton.onclick = async () => {
     const token =
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweEIwOUMyNjlFYTQ3NTlENThjNjkxRjg2N2NjMTI5MUEyNWU3RWIwM2IiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTYzNzAwNzMxMzk5MiwibmFtZSI6InRva2VubWludCJ9.O5dbXgHEk90doDUpxl5LDPGmoXs78CFavRGcvDMNzEM';
     var imageFile = document.getElementById('fimage').files[0];
-    var imageName = document.getElementById('fimage').files[0].name;
-    console.log('Image' + imageName);
+    var imageName = document
+      .getElementById('fimage')
+      .files[0].name.replace(/\s+/g, '');
+    console.log('Image ' + imageName);
     if (imageName !== '') {
       let progressMsg = document.getElementById('store-progress');
       progressMsg.innerHTML = 'Saving Image... ';
@@ -182,6 +183,8 @@ storeButton.onclick = async () => {
       await mint(metadata.url);
       progressMsg.innerHTML = 'Complete! ';
     }
+  } else if (isMinter.innerHTML === 'Check if you are able to mint') {
+    alert('Please first check if you can mint');
   } else {
     alert(
       "Sorry fren, 🥺 you can only mint if you are a minter.\r\nClick the 'Become a Minter' button"
