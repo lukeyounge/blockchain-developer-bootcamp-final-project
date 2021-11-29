@@ -6,7 +6,7 @@
 https://lukeyounge.github.io/tokenmint-ipfs/
 
 #### Screencast
-
+...
 
 #### public account
 lukey.eth
@@ -46,6 +46,26 @@ root
 To run the front end, simply use 'go live' in vs code after you have cloned and installed dependencies.
 
 ## Cloning and installing on your machine
+
+#### Installing
+1. Git clone the repo in a fresh folder:
+`git clone https://github.com/lukeyounge/blockchain-developer-bootcamp-final-project.git`
+2. cd into the blockchain-developer-bootcamp-final-project folder
+3. run `npm install` to install the dependencies.
+4. comment out ropsten and rinkeby sections in truffle-config.js
+
+#### Testing
+If you don't already have ganache installed:
+1. run `npm install ganache-cli -g` and if you don't have truffle installed:
+2. run `npm install --save-dev truffle`.
+
+Then:
+1. run `truffle develop` 
+2. run `compile` (All contracts will compile)
+3. run `test` (all 6 tests will pass)
+
+In the test file (RecogToken.test.js) I hard coded a NFT uri that was created by the contract as I couldn't work out if it was possible to call it programmatically.
+
 
 
 
