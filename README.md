@@ -52,7 +52,7 @@ To run the front end, simply use 'go live' in vs code after you have cloned and 
 `git clone https://github.com/lukeyounge/blockchain-developer-bootcamp-final-project.git`
 2. cd into the blockchain-developer-bootcamp-final-project folder
 3. run `npm install` to install the dependencies.
-4. comment out ropsten and rinkeby sections in truffle-config.js
+4. comment out ropsten and rinkeby sections in truffle-config.js (optional)
 
 #### Testing
 If you don't already have ganache installed:
