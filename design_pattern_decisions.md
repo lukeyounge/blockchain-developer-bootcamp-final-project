@@ -29,7 +29,7 @@ In the final project requirements, available in the course here, there is a requ
 
 ## Below is a list of attack vectors and / or security measures from the course, specifically Solidity Pitfalls and Attacks and Smart Contract Pitfalls and Attacks. It is okay for some of these to overlap with design patterns, but you can list at least two of them in avoiding_common_attacks.md:
 
-From Solidity Pitfalls and Attacks
+### From Solidity Pitfalls and Attacks
 - Using Specific Compiler Pragma 
 
 *I used a specific compiler: 0.8.2*
