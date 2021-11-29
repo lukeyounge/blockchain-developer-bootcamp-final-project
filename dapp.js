@@ -120,7 +120,7 @@ queryMinterRole.onclick = async () => {
   } else {
     console.log('You are not a minter');
     isMinter.innerHTML =
-      'Please sign up to become a minter, lifetime minting just 0.01 eth';
+      'Please sign up to become a minter, lifetime minting just 0.001 eth';
   }
 };
 
