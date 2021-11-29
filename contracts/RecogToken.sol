@@ -49,9 +49,10 @@ contract RecogToken is ERC721, ERC721URIStorage {
         return "";
     }
 
+
     /// @dev constructor for the RecogToken contract
     constructor() ERC721("RecogToken", "RCT") {}
-        // minterRole[owner] = true;
+    
     
     /// @dev this function creates the tokenId and mints the token to the msg.sender
     /// @param uri the URI of the token

@@ -52,6 +52,6 @@ Not everything can be avoided, but you can write if you’re taking protection a
 
 - Timestamp Dependence
 
-*While this contract can be forcibly sent ether, since there is no contract logic dependent on a specific contract balance, this attack will not work. Also, since I am not maintaining a balance of any participant in the contract, an attacker cannot spoof the contract after forcibly sending it ether. The contract balance - address(this).balance - is maintained at the protocol layer. Lastly, there is a simple fallback function to guard against a coinbase transaction or as a destination of a selfdestruct.*
+*While this contract can be forcibly sent ether, since there is no contract logic dependent on a specific contract balance, this attack will not work. Also, since I am not maintaining a balance of any participant in the contract, an attacker cannot spoof the contract after forcibly sending it ether. The contract balance - address(this).balance - is maintained at the protocol layer.*
 
 - Tx.Origin Authentication
