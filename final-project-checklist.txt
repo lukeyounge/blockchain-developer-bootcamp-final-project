@@ -2,9 +2,11 @@ PASTE_YOUR_FINAL_PROJECT_REPO_HERE
 
 Please answer the following questions. Does your project:
 
-1. Follow this naming format: https://github.com/YOUR_GITHUB_USERNAME_HERE/blockchain-developer-bootcamp-final-project? YES/NO
+1. Follow this naming format: https://github.com/YOUR_GITHUB_USERNAME_HERE/blockchain-developer-bootcamp-final-project?
+- [x] YES
 
-2. Contain a README.md file which describes the project, describes the directory structure, and where the frontend project can be accessed? And has your public Ethereum address if you'd like your certification as an NFT (optional)? YES/NO
+2. Contain a README.md file which describes the project, describes the directory structure, and where the frontend project can be accessed? And has your public Ethereum address if you'd like your certification as an NFT (optional)? 
+- [x] YES
 
 3. Contain smart contract(s) which:
 --Are commented to the specs described by NatSpec Solidity documentation
