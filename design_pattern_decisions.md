@@ -12,7 +12,7 @@ In the final project requirements, available in the course here, there is a requ
 - Inter-Contract Execution (Calling functions in external contracts) Inter-Contract Execution, Part 1 and Part 2
 - Inheritance and Interfaces (Importing and extending contracts and/or using contract interfaces) Inheritances and Interfaces — (note: this is already a requirement in the final project, so you can simply describe which library or interface you use)
   
-  *I'm using Open Zeppelin contracts ERC721 and ERC721URIStorage, I'm also using their Counters utility. *
+*I'm using Open Zeppelin contracts ERC721 and ERC721URIStorage, I'm also using their Counters utility.*
 
 - Oracles (retrieving third-party data) Off-Chain Oracles and Chapter 5: Second-Order Effects — Oracles Revisited
   
@@ -31,15 +31,27 @@ In the final project requirements, available in the course here, there is a requ
 
 From Solidity Pitfalls and Attacks
 - Using Specific Compiler Pragma 
+
+*I used a specific compiler: 0.8.2*
+
 - Proper Use of Require, Assert and Revert 
 - Use Modifiers Only for Validation 
 - Pull Over Push (Prioritize receiving contract calls over making contract calls)
 - Checks-Effects-Interactions (Avoiding state changes after external calls)
+
+*In mint() function, I first require the minter, and then incremement the counter before calling the _safeMint function.*
+
 - Proper use of .call and .delegateCall
+
+*In the withdraw() function, I specify .call for withdrawals.*
 
 From Smart Contract Pitfalls and Attacks
 Not everything can be avoided, but you can write if you’re taking protection against:
 - Re-entrancy
+
+
 - Timestamp Dependence
-- Forcibly Sending Ether
+
+*While this contract can be forcibly sent ether, since there is no contract logic dependent on a specific contract balance, this attack will not work. Also, since I am not maintaining a balance of any participant in the contract, an attacker cannot spoof the contract after forcibly sending it ether. The contract balance - address(this).balance - is maintained at the protocol layer. Lastly, there is a simple fallback function to guard against a coinbase transaction or as a destination of a selfdestruct.*
+
 - Tx.Origin Authentication
