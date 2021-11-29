@@ -74,21 +74,6 @@ const rctABI = [
   },
 ];
 
-// Dynamic detection (later on with react)
-// async loadBlockchainData() {
-//     const web3 = window.web3;
-//     // Load account
-//     const accounts = await web3.eth.getAccounts();
-//     this.setState({ account: accounts[0] })
-//     const networkId = await web3.eth.net.getId();
-//     const networkData = RecogToken.networks[networkId];
-//     if (networkData) {
-//         const recogToken = web3.eth.Contract(RecogToken.abi, networkData.address);
-//         this.setState({ RecogToken });
-//         const itemCount = await RecogToken.methods.getItemCount().call();
-//         this.setState({ itemCount });
-//     }
-
 import { NFTStorage } from 'https://cdn.skypack.dev/nft.storage@3.4.0';
 
 window.addEventListener('load', function () {
