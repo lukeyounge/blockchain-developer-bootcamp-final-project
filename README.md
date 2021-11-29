@@ -1,11 +1,14 @@
 # tokenmint-ipfs
 
-# blockchain-developer-bootcamp-final-project
+## blockchain-developer-bootcamp-final-project
+
+## Deployed url
+https://lukeyounge.github.io/tokenmint-ipfs/
 
 ## Intro
 Businesses want to acknowledge staff and other stakeholders, and often use corporate gifts to achieve this. Staff members may recieve ornaments, pens, caps, tee-shirts, etc. Sometimes these products are useful, often they gather dust and are a waste of resources.
 
-I'd like to create a simple DIY app for an organisation to mint their own NFTs, then batch deliver those via a redeem link. 
+I'd like to create a simple DIY app for an organisation to mint their own NFTs. 
 
 ## Basic Use Flow
 - Web front end that allows someone to upload image and basic metadata, plus number of NFTs required. 
