@@ -1,4 +1,4 @@
-const rctAddress = '0x87DD842a4386e4514529f60Aacac127aba699A6f';
+const rctAddress = '0xac6b622617c7Ad9472e22F624f0e0b0028eA79CD';
 const rctABI = [
   {
     inputs: [
