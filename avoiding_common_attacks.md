@@ -5,7 +5,7 @@ I searched these on the SWC Registry and couldn't find a code for any of the com
 #### Using Specific Compiler Pragma 
 I used a specific compiler: 0.8.2
 
-#### Checks-Effects-Interactions (Avoiding state changes after external calls)
+#### Checks-Effects-Interactions (Avoiding state changes after external calls) SWC-107
 The safeMint function first updates state (tokenID) before calling the _safeMint function that creates the token.
 
 #### Proper use of .call and .delegateCall
