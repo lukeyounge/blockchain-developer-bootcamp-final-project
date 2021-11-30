@@ -3,4 +3,4 @@ Ropsten:
 Not using this one because OpenSea doesn't support.
 
 Rinkeby:
-0x87DD842a4386e4514529f60Aacac127aba699A6f
+0xac6b622617c7Ad9472e22F624f0e0b0028eA79CD

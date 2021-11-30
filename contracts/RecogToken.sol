@@ -49,6 +49,12 @@ contract RecogToken is ERC721, ERC721URIStorage {
         return "";
     }
 
+    /// @dev receive and fallback so the contract can receive data and messages and not be destroyed
+    receive() external payable {
+    }
+
+    fallback() external payable {
+    }
 
     /// @dev constructor for the RecogToken contract
     constructor() ERC721("RecogToken", "RCT") {}

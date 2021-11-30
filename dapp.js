@@ -105,6 +105,7 @@ mmEnable.onclick = async () => {
   // Show currently selected account
   const mmCurrentAccount = document.getElementById('mm-current-account');
   mmCurrentAccount.innerHTML = 'Account: ' + ethereum.selectedAddress;
+  mmEnable.innerHTML = 'MetaMask Connected';
 };
 
 queryMinterRole.onclick = async () => {
