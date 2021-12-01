@@ -31,6 +31,7 @@ Moving forward I would like to:
 - A simple link to the collection on OpenSea Rinkeby
 
 ## Directory structure
+``` bash
 .
 ├── README.md
 ├── avoiding_common_attacks.md
@@ -56,6 +57,7 @@ Moving forward I would like to:
 ├── test
 │   └── RecogToken.test.js
 └── truffle-config.js
+```
 
 To run the front end, simply use 'go live' in vs code on index.html after you have cloned and installed dependencies.
 
