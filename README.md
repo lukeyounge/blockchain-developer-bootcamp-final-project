@@ -47,6 +47,12 @@ To run the front end, simply use 'go live' in vs code on index.html after you ha
 
 ## Cloning and installing on your machine
 
+#### Requirements
+1. Truffle v5.4.12 (core: 5.4.12)
+2. Solidity v0.5.16 (solc-js)
+3. Node v14.17.3
+4. Web3.js v1.5.3
+
 #### Installing
 1. Git clone the repo in a fresh folder:
 `git clone https://github.com/lukeyounge/blockchain-developer-bootcamp-final-project.git`
