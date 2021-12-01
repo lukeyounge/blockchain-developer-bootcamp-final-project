@@ -31,17 +31,31 @@ Moving forward I would like to:
 - A simple link to the collection on OpenSea Rinkeby
 
 ## Directory structure
-root
-	- build
-	- contracts
-	- migrations
-	- test
-- dapp.js
-- index.html
-- readme.md
-- avoiding_common_attacks.md
-- deployed_address.txt
-- design_pattern_decisions.md 
+.
+├── README.md
+├── avoiding_common_attacks.md
+├── build
+│   ├── abi
+│   └── contracts
+├── contracts
+│   ├── Migrations.sol
+│   └── RecogToken.sol
+├── dapp.js
+├── deployed\ address.txt
+├── design_pattern_decisions.md
+├── final-project-checklist.txt
+├── index.html
+├── migrations
+│   ├── 1_initial_migration.js
+│   └── 2_recog_token.js
+├── nft.storage-tools
+├── node_modules
+├── package-lock.json
+├── package.json
+├── style.css
+├── test
+│   └── RecogToken.test.js
+└── truffle-config.js
 
 To run the front end, simply use 'go live' in vs code on index.html after you have cloned and installed dependencies.
 
