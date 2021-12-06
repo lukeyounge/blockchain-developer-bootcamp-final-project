@@ -100,22 +100,24 @@ const becomeMinter = document.getElementById('become-minter');
 const queryMinterRole = document.getElementById('query-minter-role');
 
 mmEnable.onclick = async () => {
-    // Connect to MetaMask
-    await window.ethereum
-      .request({ method: 'eth_requestAccounts' })
-      .then(handleAccountsChanged)
-      .catch((error) => {
-        if (error.code === 4001) {
-          // EIP-1193 userRejectedRequest error
-          console.log('Please connect to MetaMask.');
-        } else {
-          console.error(error);
-        }
-    // Show currently selected account
-    const mmCurrentAccount = document.getElementById('mm-current-account');
-    mmCurrentAccount.innerHTML = 'Account: ' + ethereum.selectedAddress;
-    mmEnable.innerHTML = 'MetaMask Connected';
+  // Connect to MetaMask
+  await window.ethereum
+    .request({ method: "eth_requestAccounts" })
+    .then(handleAccountsChanged)
+    .catch((error) => {
+      if (error.code === 4001) {
+        // EIP-1193 userRejectedRequest error
+        console.log("Please connect to MetaMask.");
+      } else {
+        console.error(error);
+      }
     });
+  // Show currently selected account
+  const mmCurrentAccount = document.getElementById("mm-current-account");
+  mmCurrentAccount.innerHTML = "Account: " + ethereum.selectedAddress;
+  mmEnable.innerHTML = "MetaMask Connected";
+};
+
 
 queryMinterRole.onclick = async () => {
   let web3 = new Web3(window.ethereum);
