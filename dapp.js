@@ -76,16 +76,12 @@ const rctABI = [
 
 import { NFTStorage } from 'https://cdn.skypack.dev/nft.storage@3.4.0';
 
-const isMinter = document.getElementById('is-minter');
-const storeButton = document.getElementById('storeButton');
-const becomeMinter = document.getElementById('become-minter');
-const queryMinterRole = document.getElementById('query-minter-role');
-
-// Checking if Web3 has been injected by the browser (MetaMask)
-const mmDetected = document.getElementById('mm-detected');
 window.addEventListener('load', function () {
+  // Checking if Web3 has been injected by the browser (MetaMask)
   if (typeof window.ethereum !== 'undefined') {
     console.log('Web3 has been detected');
+    // Use MetaMask's provider
+    let mmDetected = this.document.getElementById('mm-detected');
     mmDetected.innerHTML = 'MetaMask detected';
   } else {
     mmDetected.innerHTML = 'No MetaMask 🥺';
@@ -97,24 +93,19 @@ window.addEventListener('load', function () {
   }
 });
 
-// Connect to MetaMask
 const mmEnable = document.getElementById('mm-connect');
+const isMinter = document.getElementById('is-minter');
+const storeButton = document.getElementById('storeButton');
+const becomeMinter = document.getElementById('become-minter');
+const queryMinterRole = document.getElementById('query-minter-role');
+
 mmEnable.onclick = async () => {
-  await window.ethereum
-    .request({ method: "eth_requestAccounts" })
-    .then(handleAccountsChanged)
-    .catch((error) => {
-      if (error.code === 4001) {
-        // EIP-1193 userRejectedRequest error
-        console.log("Please connect to MetaMask.");
-      } else {
-        console.error(error);
-      }
-    });
+  // Connect to MetaMask
+  await window.ethereum.request({ method: 'eth_requestAccounts' });
   // Show currently selected account
-  const mmCurrentAccount = document.getElementById("mm-current-account");
-  mmCurrentAccount.innerHTML = "Account: " + ethereum.selectedAddress;
-  mmEnable.innerHTML = "MetaMask Connected";
+  const mmCurrentAccount = document.getElementById('mm-current-account');
+  mmCurrentAccount.innerHTML = 'Account: ' + ethereum.selectedAddress;
+  mmEnable.innerHTML = 'MetaMask Connected';
 };
 
 queryMinterRole.onclick = async () => {
