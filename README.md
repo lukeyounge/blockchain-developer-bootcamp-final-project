@@ -8,8 +8,8 @@ https://lukeyounge.github.io/blockchain-developer-bootcamp-final-project/
 #### Screencast
 https://youtu.be/A1SKzwG11ug
 
-#### public account
-lukey.eth
+#### Public Address
+lukey.eth / 0x9c281902C8dEFdD2277993318EE702dA5B708752
 
 ## Intro
 Businesses want to acknowledge staff and other stakeholders, and often use corporate gifts to achieve this. Staff members may receive ornaments, pens, caps, tee-shirts, etc. Sometimes these products are useful, often they gather dust and are a waste of resources.
