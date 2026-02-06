@@ -8,17 +8,26 @@ pragma solidity 0.8.2;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-/// contract RecogToken is ERC721, ERC721URIStorage 
-contract RecogToken is ERC721, ERC721URIStorage {
+/// contract RecogToken is ERC721, ERC721URIStorage, Ownable, ReentrancyGuard
+contract RecogToken is ERC721, ERC721URIStorage, Ownable, ReentrancyGuard {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIdCounter;
 
-    address owner = msg.sender;
+    /// @notice Maximum number of tokens that can be minted
+    uint256 public constant MAX_SUPPLY = 10000;
 
     /// @dev this role is used to grant access to the mint function
     /// @notice creates a role for minting tokens
     mapping(address => bool) public minterRole;
+
+    /// @dev Events for tracking state changes
+    event MinterAdded(address indexed minter, address indexed addedBy);
+    event MinterRemoved(address indexed minter, address indexed removedBy);
+    event TokenMinted(address indexed to, uint256 indexed tokenId, string uri);
+    event Withdrawal(address indexed owner, uint256 amount);
 
     /// @notice a simple getter function to query an account's role
     /// @param _account the account to query
@@ -30,17 +39,23 @@ contract RecogToken is ERC721, ERC721URIStorage {
     /// @param _minter the account to add as a minter
     function addMinter(address _minter) public payable {
         require(msg.value >= 1000000000000000, "pay at least 0.001 eth to sign up as a minter");
-        require(_minter != address(0));
-        require(minterRole[_minter] == false);
+        require(_minter != address(0), "Cannot add zero address as minter");
+        require(minterRole[_minter] == false, "Address is already a minter");
         minterRole[_minter] = true;
+        emit MinterAdded(_minter, msg.sender);
     }
 
-    /// @notice a function to remove a minter, not currently used
+    /// @notice a function to remove a minter, only callable by owner or the minter themselves
     /// @param _minter the account to remove as a minter
     function removeMinter(address _minter) public {
-        require(_minter != address(0));
-        require(minterRole[_minter] == true);
+        require(
+            msg.sender == owner() || msg.sender == _minter,
+            "Only owner or minter themselves can remove minter role"
+        );
+        require(_minter != address(0), "Cannot remove zero address");
+        require(minterRole[_minter] == true, "Address is not a minter");
         minterRole[_minter] = false;
+        emit MinterRemoved(_minter, msg.sender);
     }
 
     /// @notice this is inherited from OpenZeppelin ERC721
@@ -58,24 +73,30 @@ contract RecogToken is ERC721, ERC721URIStorage {
 
     /// @dev constructor for the RecogToken contract
     constructor() ERC721("RecogToken", "RCT") {}
-    
-    
+
+
     /// @dev this function creates the tokenId and mints the token to the msg.sender
-    /// @param uri the URI of the token
+    /// @notice Only addresses with minter role can mint. Caller must be the minter.
     /// @param to the address to mint the token to
+    /// @param uri the URI of the token
     function safeMint(address to, string memory uri) public {
-        require( minterRole[to], "Only minter can mint tokens" );
+        require(minterRole[msg.sender], "Caller must have minter role");
+        require(to == msg.sender, "Can only mint to your own address");
+        require(_tokenIdCounter.current() < MAX_SUPPLY, "Max supply reached");
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
+        emit TokenMinted(to, tokenId, uri);
     }
 
     /// @dev Function to withdraw ether from contract address
-    /// @notice only the owner can withdraw ether
-    function withdraw() public {
-        require(msg.sender == owner, "Only owner can withdraw");
-        (bool success, ) = owner.call{value: address(this).balance}("");
+    /// @notice only the owner can withdraw ether, protected against reentrancy
+    function withdraw() public onlyOwner nonReentrant {
+        uint256 balance = address(this).balance;
+        require(balance > 0, "No funds to withdraw");
+        emit Withdrawal(msg.sender, balance);
+        (bool success, ) = owner().call{value: balance}("");
         require(success, "Withdrawal failed");
     }
 
